@@ -1,5 +1,6 @@
 "use client"
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Typed from 'typed.js';
 
@@ -15,7 +16,7 @@ export default function Home() {
   const calculateTimeSince = () => {
     const startDate = new Date('2024-08-02'); // Set the start date
     const currentDate = new Date(); // Current date and time
-    const diff = currentDate - startDate; // Difference in milliseconds
+    const diff = currentDate.getTime() - startDate.getTime(); // Difference in milliseconds
 
     // Convert milliseconds to days, hours, minutes, and seconds
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -89,14 +90,14 @@ export default function Home() {
         <h1 className="text-5xl text-pink-500 font-bold text-center mt-8">
           <span id="typed-text" ref={typedElement}></span>
         </h1>
-        <p className="mt-4 text-xl text-gray-700 text-center max-w-3xl mx-auto">Here's our beautiful journey together, each moment a memory to cherish. Let's celebrate our love, one beautiful memory at a time.</p>
+        <p className="mt-4 text-xl text-gray-700 text-center max-w-3xl mx-auto">Here&apos;s our beautiful journey together, each moment a memory to cherish. Let&apos;s celebrate our love, one beautiful memory at a time.</p>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* First Date */}
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <h2 className="text-2xl text-pink-600 font-semibold text-center">First Date</h2>
             <p className="text-gray-600 mt-3 text-center">Our very first date... where it all started!</p>
-            <a href="/first-date" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</a>
+            <Link href="/first-date" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</Link>
             <div className="mt-4 text-center">
               {/* <img src="/assets/first-date.gif" alt="First Date" className="w-full h-48 object-cover rounded-lg"/> */}
             </div>
@@ -109,7 +110,7 @@ export default function Home() {
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <h2 className="text-2xl text-pink-600 font-semibold text-center">First Hand Holding</h2>
             <p className="text-gray-600 mt-3 text-center">When our hands first touched...</p>
-            <a href="/first-hand-holding" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</a>
+            <Link href="/first-hand-holding" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</Link>
             <div className="mt-4 text-center">
               {/* <img src="/assets/hand-holding.gif" alt="First Hand Holding" className="w-full h-48 object-cover rounded-lg"/> */}
             </div>
@@ -122,7 +123,7 @@ export default function Home() {
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <h2 className="text-2xl text-pink-600 font-semibold text-center">First Hug</h2>
             <p className="text-gray-600 mt-3 text-center">Our first hug... an unforgettable feeling!</p>
-            <a href="/first-hug" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</a>
+            <Link href="/first-hug" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</Link>
             <div className="mt-4 text-center">
               {/* <img src="/assets/first-hug.gif" alt="First Hug" className="w-full h-48 object-cover rounded-lg"/> */}
             </div>
@@ -135,7 +136,7 @@ export default function Home() {
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <h2 className="text-2xl text-pink-600 font-semibold text-center">First Gift</h2>
             <p className="text-gray-600 mt-3 text-center">The first gift you gave me.</p>
-            <a href="/first-rose" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</a>
+            <Link href="/first-rose" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</Link>
             <div className="mt-4 text-center">
               {/* <img src="/assets/first-gift.gif" alt="First Gift" className="w-full h-48 object-cover rounded-lg"/> */}
             </div>
@@ -148,7 +149,7 @@ export default function Home() {
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <h2 className="text-2xl text-pink-600 font-semibold text-center">Drives on Scooter</h2>
             <p className="text-gray-600 mt-3 text-center">Our cute scooter rides, together through the city streets!</p>
-            <a href="/drives-on-scooter" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</a>
+            <Link href="/drives-on-scooter" className="text-pink-500 hover:underline mt-4 block text-center">See the moment</Link>
             <div className="mt-4 text-center">
               {/* <img src="/assets/scooter-ride.gif" alt="Scooter Ride" className="w-full h-48 object-cover rounded-lg"/> */}
             </div>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 
 export default function FirstHug() {
@@ -15,7 +16,7 @@ export default function FirstHug() {
           <br/>
           When we going back from the peace library near the staircase ig....
         </p>
-        <a href="/" className="mt-6 text-pink-500 hover:underline inline-block">Back to the Journey</a>
+        <Link href="/" className="mt-6 text-pink-500 hover:underline inline-block">Back to the Journey</Link>
       </div>
     </div>
   );

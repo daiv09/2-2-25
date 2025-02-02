@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 
 export default function FirstAnniversary() {
@@ -11,7 +12,7 @@ export default function FirstAnniversary() {
 
           We used to type very long messages at midnight to wish each other the on the 2nd of every month !!
         </p>
-        <a href="/" className="mt-6 text-pink-500 hover:underline inline-block">Back to the Journey</a>
+        <Link href="/" className="mt-6 text-pink-500 hover:underline inline-block">Back to the Journey</Link>
       </div>
     </div>
   );

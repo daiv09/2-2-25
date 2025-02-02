@@ -1,7 +1,7 @@
 // pages/first-gift.tsx
 import Navbar from '../../components/Navbar';
 
-function FirstGift = () => {
+const  FirstGift = () => {
     return (
         <>
         <Navbar />
