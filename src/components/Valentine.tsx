@@ -119,7 +119,7 @@ export default function ValentinePopup() {
               <div className="flex-1 bg-pink-100 p-6 rounded-xl shadow-md">
                 <h2 className="text-2xl font-bold text-pink-600 mb-4">Why You Should Be My Valentine 💕</h2>
                 <p className="text-md text-gray-800">
-                  Aruuu can yo please be my valentine !!! <br />
+                  Can you please be my valentine !!! <br />
                   I will be the happiest person alive on the planet if you say yes to me. <br />
                   It will be the best day everrr. Maine pura plan karke rakh hai vo din. You just need to come and enjoyy. Cutu !
                 </p>
@@ -138,7 +138,7 @@ export default function ValentinePopup() {
           className="fixed inset-0 flex items-center justify-center z-50"
         >
           <div className="bg-red-500 text-white p-6 rounded-xl shadow-xl text-center">
-            <h2 className="text-2xl font-bold">Aruuuu? 🥺</h2>
+            <h2 className="text-2xl font-bold">Sacchi? 🥺</h2>
             <button
               onClick={() => {
                 setNoClicked(false);
