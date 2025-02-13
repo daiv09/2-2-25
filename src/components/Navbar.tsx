@@ -50,7 +50,11 @@ const Navbar = () => {
   );
 };
 
-const NavLinks = ({ onClick }) => (
+interface NavLinksProps {
+  onClick?: () => void;
+}
+
+const NavLinks = ({ onClick }: NavLinksProps) => (
   <>
     <Link href="/first-date" className="text-white text-lg hover:text-yellow-200 transition" onClick={onClick}>
       First Date
