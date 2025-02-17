@@ -1,9 +1,12 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import Image from "next/image";
 import Typed from "typed.js";
-import ValentinePopup from "@/components/Valentine";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+// import ValentinePopup from "@/components/Valentine";
 
 export default function Home() {
   const [timeSince, setTimeSince] = useState({
@@ -44,12 +47,15 @@ export default function Home() {
   useEffect(() => {
     if (typedElement.current) {
       const options = {
-        strings: ["Happy 6 Months, My Love!"], // The text you want to appear with the typing effect
-        typeSpeed: 100, // Speed at which the text types
-        backSpeed: 50, // Speed at which the text erases
-        backDelay: 1000, // Delay before erasing the text
-        startDelay: 500, // Delay before typing starts
-        showCursor: true, // Show the cursor
+        strings: [
+          "My love for you is <i>Awesome</i>",
+          "My love for you is <i>Great</i>",
+          "My love for you is Ever-lasting",
+        ],
+        typeSpeed: 0,
+        backSpeed: 0,
+        smartBackspace: true, // this is a default
+        loop: true,
       };
 
       // Create the Typed.js instance
@@ -65,12 +71,12 @@ export default function Home() {
   return (
     <div className="bg-gradient-to-t from-pink-100 via-pink-50 to-white min-h-screen">
       <Navbar />
-      <ValentinePopup />
+      {/* <ValentinePopup /> */}
       <div className="container mx-auto mt-12 px-4">
         <div className="text-center mt-12">
           {/* Attractive Timer Display */}
           {/* Timer Display with Mobile Responsiveness */}
-          <div className="bg-gradient-to-r from-pink-500 to-red-400 text-white p-6 rounded-3xl shadow-xl max-w-lg mx-auto transform hover:scale-105 transition-all duration-300">
+          {/* <div className="bg-gradient-to-r from-pink-500 to-red-400 text-white p-6 rounded-3xl shadow-xl max-w-lg mx-auto transform hover:scale-105 transition-all duration-300">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-white text-center">
               Time since 2nd August 2024
             </h2>
@@ -89,7 +95,37 @@ export default function Home() {
                 {timeSince.seconds}{" "}
                 <span className="text-sm block">Seconds</span>
               </div>
-            </div>
+            </div> */}
+            <CardContainer className="inter-var">
+      <CardBody className="bg-gradient-to-r from-pink-500 to-red-400 text-white p-6 rounded-3xl shadow-xl max-w-lg mx-auto transform hover:scale-105 transition-all duration-300relative group/card  dark:hover:shadow-2xl w-auto sm:w-[30rem] h-auto border  ">
+        <CardItem
+          translateZ="50"
+          className="text-2xl sm:text-3xl font-semibold mb-4 text-white text-center font-bold"
+        >
+          Time since 2nd August 2024
+        </CardItem>
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4">
+              <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
+                {timeSince.days} <span className="text-sm block">Days</span>
+              </div>
+              <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
+                {timeSince.hours} <span className="text-sm block">Hours</span>
+              </div>
+              <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
+                {timeSince.minutes}{" "}
+                <span className="text-sm block">Minutes</span>
+              </div>
+              <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
+                {timeSince.seconds}{" "}
+                <span className="text-sm block">Seconds</span>
+              </div>
+              </div>
+        <CardItem translateZ="100" className="w-full mt-4">
+          
+        </CardItem>
+        
+      </CardBody>
+    </CardContainer>
           </div>
         </div>
 
@@ -216,6 +252,6 @@ export default function Home() {
           {/* Add more moments as needed */}
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
