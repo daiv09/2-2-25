@@ -3,7 +3,6 @@ import { useState, useRef, useEffect } from "react";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
-import Image from "next/image";
 import Typed from "typed.js";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 // import ValentinePopup from "@/components/Valentine";
@@ -97,10 +96,10 @@ export default function Home() {
               </div>
             </div> */}
             <CardContainer className="inter-var">
-      <CardBody className="bg-gradient-to-r from-pink-500 to-red-400 text-white p-6 rounded-3xl shadow-xl max-w-lg mx-auto transform hover:scale-105 transition-all duration-300relative group/card  dark:hover:shadow-2xl w-auto sm:w-[30rem] h-auto border  ">
+      <CardBody className="bg-gradient-to-r from-pink-500 to-red-400 text-white p-8 rounded-3xl shadow-xl max-w-lg mx-auto transform hover:scale-105 transition-all duration-300relative group/card  dark:hover:shadow-2xl w-auto sm:w-[30rem] h-auto border  ">
         <CardItem
           translateZ="50"
-          className="text-2xl sm:text-3xl font-semibold mb-4 text-white text-center font-bold"
+          className="text-2xl sm:text-3xl mb-4 text-white text-center font-bold"
         >
           Time since 2nd August 2024
         </CardItem>
@@ -120,7 +119,7 @@ export default function Home() {
                 <span className="text-sm block">Seconds</span>
               </div>
               </div>
-        <CardItem translateZ="100" className="w-full mt-4">
+        <CardItem translateZ={100} className="w-full mt-4">
           
         </CardItem>
         
