@@ -18,9 +18,6 @@ export default function ValentinePopup() {
       function randomInRange(min: number, max: number): number {
         return Math.random() * (max - min) + min;
       }
-    function randomInRange(min: number, max: number): number {
-      return Math.random() * (max - min) + min;
-    }
 
       const interval = setInterval(function () {
         const timeLeft = animationEnd - Date.now();
