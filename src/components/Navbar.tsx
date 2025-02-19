@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-white text-3xl font-bold">
-          <Link href="/" className="text-white hover:text-yellow-200 transition">
+          <Link href="/" className="text-white hover:text-pink-400 transition">
             Our Love Journey
           </Link>
         </h1>
@@ -56,19 +56,19 @@ interface NavLinksProps {
 
 const NavLinks = ({ onClick }: NavLinksProps) => (
   <>
-    <Link href="/first-date" className="text-white text-lg hover:text-yellow-200 transition" onClick={onClick}>
+    <Link href="/first-date" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Date
     </Link>
-    <Link href="/first-hand-holding" className="text-white text-lg hover:text-yellow-200 transition" onClick={onClick}>
+    <Link href="/first-hand-holding" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Hand Holding
     </Link>
-    <Link href="/first-hug" className="text-white text-lg hover:text-yellow-200 transition" onClick={onClick}>
+    <Link href="/first-hug" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Hug
     </Link>
-    <Link href="/first-anniversary" className="text-white text-lg hover:text-yellow-200 transition" onClick={onClick}>
+    <Link href="/first-anniversary" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Anniversary
     </Link>
-    <Link href="/first-rose" className="text-white text-lg hover:text-yellow-200 transition" onClick={onClick}>
+    <Link href="/first-rose" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Rose
     </Link>
   </>

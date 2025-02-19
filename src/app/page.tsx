@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Typed from "typed.js";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { TracingBeam } from "@/components/ui/tracing-beam";
 // import ValentinePopup from "@/components/Valentine";
 
 export default function Home() {
@@ -70,12 +71,14 @@ export default function Home() {
   return (
     <div className="bg-gradient-to-t from-pink-100 via-pink-50 to-white min-h-screen">
       <Navbar />
-      {/* <ValentinePopup /> */}
-      <div className="container mx-auto mt-12 px-4">
-        <div className="text-center mt-12">
-          {/* Attractive Timer Display */}
-          {/* Timer Display with Mobile Responsiveness */}
-          {/* <div className="bg-gradient-to-r from-pink-500 to-red-400 text-white p-6 rounded-3xl shadow-xl max-w-lg mx-auto transform hover:scale-105 transition-all duration-300">
+
+      <TracingBeam className="px-6">
+        {/* <ValentinePopup /> */}
+        <div className="container mx-auto mt-12 px-4">
+          <div className="text-center mt-12">
+            {/* Attractive Timer Display */}
+            {/* Timer Display with Mobile Responsiveness */}
+            {/* <div className="bg-gradient-to-r from-pink-500 to-red-400 text-white p-6 rounded-3xl shadow-xl max-w-lg mx-auto transform hover:scale-105 transition-all duration-300">
             <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-white text-center">
               Time since 2nd August 2024
             </h2>
@@ -96,39 +99,37 @@ export default function Home() {
               </div>
             </div> */}
             <CardContainer className="inter-var">
-      <CardBody className="bg-gradient-to-r from-pink-500 to-red-400 text-white p-8 rounded-3xl shadow-xl max-w-lg mx-auto transform hover:scale-105 transition-all duration-300relative group/card  dark:hover:shadow-2xl w-auto sm:w-[30rem] h-auto border  ">
-        <CardItem
-          translateZ="50"
-          className="text-2xl sm:text-3xl mb-4 text-white text-center font-bold"
-        >
-          Time since 2nd August 2024
-        </CardItem>
-        <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4">
-              <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
-                {timeSince.days} <span className="text-sm block">Days</span>
-              </div>
-              <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
-                {timeSince.hours} <span className="text-sm block">Hours</span>
-              </div>
-              <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
-                {timeSince.minutes}{" "}
-                <span className="text-sm block">Minutes</span>
-              </div>
-              <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
-                {timeSince.seconds}{" "}
-                <span className="text-sm block">Seconds</span>
-              </div>
-              </div>
-        <CardItem translateZ={100} className="w-full mt-4">
-          
-        </CardItem>
-        
-      </CardBody>
-    </CardContainer>
+              <CardBody className="bg-gradient-to-r from-pink-500 to-red-400 text-white p-8 rounded-3xl shadow-xl max-w-lg mx-auto transform hover:scale-105 transition-all duration-300relative group/card  dark:hover:shadow-2xl w-auto sm:w-[30rem] h-auto border  ">
+                <CardItem
+                  translateZ="50"
+                  className="text-2xl sm:text-3xl mb-4 text-white text-center font-bold"
+                >
+                  Time since 2nd August 2024
+                </CardItem>
+                <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4">
+                  <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
+                    {timeSince.days} <span className="text-sm block">Days</span>
+                  </div>
+                  <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
+                    {timeSince.hours}{" "}
+                    <span className="text-sm block">Hours</span>
+                  </div>
+                  <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
+                    {timeSince.minutes}{" "}
+                    <span className="text-sm block">Minutes</span>
+                  </div>
+                  <div className="text-lg sm:text-2xl font-bold bg-white text-pink-500 rounded-lg p-3 sm:p-4 shadow-lg text-center">
+                    {timeSince.seconds}{" "}
+                    <span className="text-sm block">Seconds</span>
+                  </div>
+                </div>
+                <CardItem translateZ={100} className="w-full mt-4"></CardItem>
+              </CardBody>
+            </CardContainer>
           </div>
         </div>
 
-        <h1 className="text-5xl text-pink-500 font-bold text-center mt-8">
+        <h1 className="text-5xl text-pink-500 font-bold text-center mt-4">
           <span id="typed-text" ref={typedElement}></span>
         </h1>
         <p className="mt-4 text-xl text-gray-700 text-center max-w-3xl mx-auto">
@@ -140,7 +141,7 @@ export default function Home() {
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* First Date */}
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <h2 className="text-2xl text-pink-600 font-semibold text-center">
+            <h2 className="text-2xl text-pink-600 merriweather-bold font-semibold text-center">
               First Date
             </h2>
             <p className="text-gray-600 mt-3 text-center">
@@ -162,7 +163,7 @@ export default function Home() {
 
           {/* First Hand Holding */}
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <h2 className="text-2xl text-pink-600 font-semibold text-center">
+            <h2 className="text-2xl text-pink-600 merriweather-bold font-semibold text-center">
               First Hand Holding
             </h2>
             <p className="text-gray-600 mt-3 text-center">
@@ -184,7 +185,7 @@ export default function Home() {
 
           {/* First Hug */}
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <h2 className="text-2xl text-pink-600 font-semibold text-center">
+            <h2 className="text-2xl text-pink-600 merriweather-bold font-semibold text-center">
               First Hug
             </h2>
             <p className="text-gray-600 mt-3 text-center">
@@ -206,7 +207,7 @@ export default function Home() {
 
           {/* First Gift */}
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <h2 className="text-2xl text-pink-600 font-semibold text-center">
+            <h2 className="text-2xl text-pink-600 merriweather-bold font-semibold text-center">
               First Gift
             </h2>
             <p className="text-gray-600 mt-3 text-center">
@@ -228,7 +229,7 @@ export default function Home() {
 
           {/* Drives on Scooter */}
           <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-            <h2 className="text-2xl text-pink-600 font-semibold text-center">
+            <h2 className="text-2xl text-pink-600 merriweather-bold font-semibold text-center">
               Drives on Scooter
             </h2>
             <p className="text-gray-600 mt-3 text-center">
@@ -250,7 +251,8 @@ export default function Home() {
 
           {/* Add more moments as needed */}
         </div>
-      </div>
+      </TracingBeam>
+    </div>
     // </div>
   );
 }
