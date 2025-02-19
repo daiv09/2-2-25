@@ -15,7 +15,7 @@ export default function ValentinePopup() {
       const animationEnd = Date.now() + duration;
       const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-      function randomInRange(min, max) {
+      function randomInRange(min: number, max: number): number {
         return Math.random() * (max - min) + min;
       }
 
