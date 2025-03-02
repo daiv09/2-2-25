@@ -7,7 +7,6 @@ import Typed from "typed.js";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { motion } from "framer-motion";
-import { tsParticles } from "@tsparticles/engine";
 import confetti from "canvas-confetti";
 
 // import ValentinePopup from "@/components/Valentine";
