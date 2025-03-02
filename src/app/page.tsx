@@ -6,6 +6,10 @@ import Navbar from "../components/Navbar";
 import Typed from "typed.js";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { TracingBeam } from "@/components/ui/tracing-beam";
+import { motion } from "framer-motion";
+import { tsParticles } from "@tsparticles/engine";
+import confetti from "canvas-confetti";
+
 // import ValentinePopup from "@/components/Valentine";
 
 export default function Home() {
@@ -15,7 +19,8 @@ export default function Home() {
     minutes: 0,
     seconds: 0,
   });
-
+  
+  const [showMessage, setShowMessage] = useState(false);
   // Function to calculate time difference since 2nd August 2024
   const calculateTimeSince = () => {
     const startDate = new Date("2024-08-02"); // Set the start date
@@ -27,6 +32,7 @@ export default function Home() {
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
 
     return { days, hours, minutes, seconds };
   };
@@ -42,6 +48,22 @@ export default function Home() {
   }, []);
 
   const typedElement = useRef(null); // Create a reference for the element
+
+  const handleConfetti = () => {
+    const defaults = {
+      spread: 360,
+      ticks: 100,
+      gravity: 0,
+      decay: 0.94,
+      startVelocity: 30,
+      shapes: ["heart"] as unknown as confetti.Shape[],
+      colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
+    };
+
+    confetti({ ...defaults, particleCount: 50, scalar: 2 });
+    confetti({ ...defaults, particleCount: 25, scalar: 3 });
+    confetti({ ...defaults, particleCount: 10, scalar: 4 });
+  };
 
   // Initialize Typed.js when the component mounts
   useEffect(() => {
@@ -71,7 +93,38 @@ export default function Home() {
   return (
     <div className="bg-gradient-to-t from-pink-100 via-pink-50 to-white min-h-screen">
       <Navbar />
+      <div className="flex justify-center">
+  <motion.button
+    onClick={() => {
+      setShowMessage(true);
+      handleConfetti();
+    }}
+    
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+    className="bg-pink-500 text-white mt-2 px-6 py-3 rounded-full shadow-lg text-xl font-bold transition-all duration-300"
+  >
+    Tap to Reveal 💝
+  </motion.button>
+</div>
 
+      {showMessage && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mt-6 p-6 bg-white rounded-lg shadow-xl text-center text-pink-600 text-lg font-semibold"
+        >
+          <p>
+            Happy <span className="font-bold text-red-500">7-Month</span>{" "}
+            Miss. 💖
+          </p>
+          <p className="mt-3">
+          {`This was a very hard month for us. Fights hue thora iske wajah se distance thora badh gaya and dono ka mann dukha bohot. It made me realise that I should value you very much and never take you for granted. Efforts are necessary and I should never stop making them. I always thought like having a girlfriend and a person that you care very much like the meeting and bonding part is hard but the time after that is hard too. Hard I mean it's not easy which I thought would be very easy after getting the perfect person. You have been very understanding this time but now it's my turn to become the old Me when we started. Well in studies and well in extra curricular too with you. I am reallly mad that you went through this and I promise I am not like the other guys who do not spend time like with their girlfriends. Gifts and surprises incoming this month and travelling together too.(Better Giftsss) Happpy Dayyyy ✨`}
+          </p>
+          <p className="mt-3 text-2xl animate-pulse">❤️❤️❤️</p>
+        </motion.div>
+      )}
       <TracingBeam className="px-6">
         {/* <ValentinePopup /> */}
         <div className="container mx-auto mt-12 px-4">
