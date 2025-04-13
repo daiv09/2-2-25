@@ -2,16 +2,26 @@
 import { useState, useRef, useEffect } from "react";
 import React from "react";
 import Link from "next/link";
+import img from "@/assests/mario.jpeg"
 import Navbar from "../components/Navbar";
 import Typed from "typed.js";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
+import RightSidebar from "@/components/sidebar";
+import { BiListOl, BiBell, BiMouse, BiChat, BiCalendar, BiFolder, BiFilter, BiGroup } from 'react-icons/bi';
+import PixelArt from "@/components/PixelArt";
 
 // import ValentinePopup from "@/components/Valentine";
 
 export default function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
   const [timeSince, setTimeSince] = useState({
     days: 0,
     hours: 0,
@@ -90,8 +100,18 @@ export default function Home() {
   }, []); // Run once when the component mounts
 
   return (
-    <div className="bg-gradient-to-t from-pink-100 via-pink-50 to-white min-h-screen">
+    <div className="relative bg-gradient-to-t from-pink-100 via-pink-50 to-white min-h-screen">
       <Navbar />
+      {/* Toggle Button */}
+      <button 
+                className={`btn btn-light fixed top-5 right-${isSidebarOpen ? '20' : '310'} z-10 transition-all`} 
+                onClick={toggleSidebar}
+            >
+                <BiListOl size={24} />
+            </button>
+
+            {/* Right Sidebar */}
+            <RightSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
      {/*<div className="flex justify-center">
   <motion.button
     onClick={() => {
@@ -303,6 +323,7 @@ export default function Home() {
           {/* Add more moments as needed */}
         </div>
       </TracingBeam>
+      <PixelArt imageSrc="/assests/mario.jpeg" pixelSize={24} />
     </div>
     // </div>
   );
