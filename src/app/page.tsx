@@ -92,7 +92,7 @@ export default function Home() {
   return (
     <div className="bg-gradient-to-t from-pink-100 via-pink-50 to-white min-h-screen">
       <Navbar />
-      <div className="flex justify-center">
+     {/*<div className="flex justify-center">
   <motion.button
     onClick={() => {
       setShowMessage(true);
@@ -105,8 +105,7 @@ export default function Home() {
   >
     Tap to Reveal 💝
   </motion.button>
-</div>
-
+</div>*/}
       {showMessage && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}

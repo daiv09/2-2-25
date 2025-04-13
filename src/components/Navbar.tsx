@@ -71,6 +71,9 @@ const NavLinks = ({ onClick }: NavLinksProps) => (
     <Link href="/first-rose" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Rose
     </Link>
+    <Link href="/your-favs" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
+      Your Favourites
+    </Link>
   </>
 );
 
