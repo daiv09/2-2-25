@@ -1,6 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* global.css or inside your Tailwind config if using custom themes */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;600&display=swap');
+
+.logo-font {
+  font-family: 'Dancing Script', cursive;
+}
+/* html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+} */
+
+.body-font {
+  font-family: 'Poppins', sans-serif;
+}
 
 * {
   margin: 0;

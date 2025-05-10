@@ -9,18 +9,15 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
-import RightSidebar from "@/components/sidebar";
-import { BiListOl, BiBell, BiMouse, BiChat, BiCalendar, BiFolder, BiFilter, BiGroup } from 'react-icons/bi';
-import PixelArt from "@/components/PixelArt";
 
 // import ValentinePopup from "@/components/Valentine";
 
 export default function Home() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen);
-    };
+  // const toggleSidebar = () => {
+  //   setIsSidebarOpen(!isSidebarOpen);
+  // };
 
   const [timeSince, setTimeSince] = useState({
     days: 0,
@@ -28,7 +25,7 @@ export default function Home() {
     minutes: 0,
     seconds: 0,
   });
-  
+
   const [showMessage, setShowMessage] = useState(false);
   // Function to calculate time difference since 2nd August 2024
   const calculateTimeSince = () => {
@@ -102,17 +99,10 @@ export default function Home() {
   return (
     <div className="relative bg-gradient-to-t from-pink-100 via-pink-50 to-white min-h-screen">
       <Navbar />
-      {/* Toggle Button */}
-      <button 
-                className={`btn btn-light fixed top-5 right-${isSidebarOpen ? '20' : '310'} z-10 transition-all`} 
-                onClick={toggleSidebar}
-            >
-                <BiListOl size={24} />
-            </button>
 
-            {/* Right Sidebar */}
-            <RightSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-     {/*<div className="flex justify-center">
+      {/* Right Sidebar */}
+      {/* <RightSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} /> */}
+      {/* <div className="flex justify-center">
   <motion.button
     onClick={() => {
       setShowMessage(true);
@@ -125,7 +115,7 @@ export default function Home() {
   >
     Tap to Reveal 💝
   </motion.button>
-</div>*/}
+</div>  */}
       {showMessage && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -134,11 +124,11 @@ export default function Home() {
           className="mt-6 p-6 bg-white rounded-lg shadow-xl text-center text-pink-600 text-lg font-semibold"
         >
           <p>
-            Happy <span className="font-bold text-red-500">7-Month</span>{" "}
+            Happy <span className="font-bold text-red-500">9-Month</span>{" "}
             Miss. 💖
           </p>
           <p className="mt-3">
-          {`This was a very hard month for us. Fights hue thora iske wajah se distance thora badh gaya and dono ka mann dukha bohot. It made me realise that I should value you very much and never take you for granted. Efforts are necessary and I should never stop making them. I always thought like having a girlfriend and a person that you care very much like the meeting and bonding part is hard but the time after that is hard too. Hard I mean it's not easy which I thought would be very easy after getting the perfect person. You have been very understanding this time but now it's my turn to become the old Me when we started. Well in studies and well in extra curricular too with you. I am reallly mad that you went through this and I promise I am not like the other guys who do not spend time like with their girlfriends. Gifts and surprises incoming this month and travelling together too.(Better Giftsss) Happpy Dayyyy ✨`}
+            {`This was a very hard month for us. Fights hue thora iske wajah se distance thora badh gaya and dono ka mann dukha bohot. It made me realise that I should value you very much and never take you for granted. Efforts are necessary and I should never stop making them. I always thought like having a girlfriend and a person that you care very much like the meeting and bonding part is hard but the time after that is hard too. Hard I mean it's not easy which I thought would be very easy after getting the perfect person. You have been very understanding this time but now it's my turn to become the old Me when we started. Well in studies and well in extra curricular too with you. I am reallly mad that you went through this and I promise I am not like the other guys who do not spend time like with their girlfriends. Gifts and surprises incoming this month and travelling together too.(Better Giftsss) Happpy Dayyyy ✨`}
           </p>
           <p className="mt-3 text-2xl animate-pulse">❤️❤️❤️</p>
         </motion.div>
@@ -323,7 +313,7 @@ export default function Home() {
           {/* Add more moments as needed */}
         </div>
       </TracingBeam>
-      <PixelArt imageSrc="/assests/mario.jpeg" pixelSize={24} />
+      {/* <PixelArt imageSrc="/assests/mario.jpeg" pixelSize={24} /> */}
     </div>
     // </div>
   );

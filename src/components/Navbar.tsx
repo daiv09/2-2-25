@@ -56,22 +56,22 @@ interface NavLinksProps {
 
 const NavLinks = ({ onClick }: NavLinksProps) => (
   <>
-    <Link href="/first-date" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
+    <Link href="/first-date" className="logo-font text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Date
     </Link>
-    <Link href="/first-hand-holding" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
+    <Link href="/first-hand-holding" className="logo-font text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Hand Holding
     </Link>
-    <Link href="/first-hug" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
+    <Link href="/first-hug" className="logo-font text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Hug
     </Link>
-    <Link href="/first-anniversary" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
+    <Link href="/first-anniversary" className="logo-font text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Anniversary
     </Link>
-    <Link href="/first-rose" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
+    <Link href="/first-rose" className="logo-font text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       First Rose
     </Link>
-    <Link href="/your-favs" className="text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
+    <Link href="/your-favs" className="logo-font text-white text-lg hover:text-pink-400 transition" onClick={onClick}>
       Your Favourites
     </Link>
   </>
