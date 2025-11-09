@@ -15,9 +15,9 @@
     "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.4.7",
+    "framer-motion": "^12.23.24",
     "lucide-react": "^0.475.0",
-    "motion": "^12.4.3",
+    "motion": "^12.23.24",
     "next": "15.1.6",
     "react": "18.3.1",
     "react-confetti": "^6.2.2",
@@ -25,7 +25,8 @@
     "react-use": "^17.6.0",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

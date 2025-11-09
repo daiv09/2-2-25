@@ -6,6 +6,7 @@ export default function FirstRose() {
   return (
     <div>
       <Navbar />
+      <div className="h-24" /> {/* spacer equal to navbar height */}
       <div className="container mx-auto mt-8 text-center">
         <h1 className="text-4xl text-pink-500 font-semibold">Our First Rose</h1>
         <div className="flex justify-center items-center">

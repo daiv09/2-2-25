@@ -52,16 +52,26 @@ export default function FirstDate() {
   return (
     <div>
       <Navbar />
+      <div className="h-24" /> {/* spacer equal to navbar height */}
       <div className="container mx-auto mt-8 text-center">
         <h1 className="text-4xl text-pink-500 font-semibold">Our First Date</h1>
         {/* <img src="/images/first-date.jpg" alt="First Date" className="w-full mt-6 rounded-xl shadow-lg" /> */}
-        <p className="mt-6 text-lg text-gray-800">This was the day we shared our first meal together, laughed, and realized that we had so much in common. It was the beginning of something beautiful.
-          <br />
-          I still remember it was at Durga where you had Onion Utappa and I had Masala Dosa on the day of Aarohan. Where it was such a nice timeee. 💖
+        <p className="mt-6 text-lg text-gray-800">
+          This was the day we shared our first meal together, laughed, and
+          realized that we had so much in common. It was the beginning of
+          something beautiful.
+          <br />I still remember it was at Durga where you had Onion Utappa and
+          I had Masala Dosa on the day of Aarohan. Where it was such a nice
+          timeee. 💖
         </p>
-        
+
         {/* <AnimatedPages /> */}
-        <Link href="/" className="mt-6 text-pink-500 hover:underline inline-block">Back to the Journey</Link>
+        <Link
+          href="/"
+          className="mt-6 text-pink-500 hover:underline inline-block"
+        >
+          Back to the Journey
+        </Link>
       </div>
     </div>
   );
