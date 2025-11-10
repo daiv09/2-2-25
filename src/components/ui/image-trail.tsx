@@ -17,7 +17,7 @@ type TrailAnimationSequence = TrailSegment[];
 
 interface ImageTrailProps {
   children: React.ReactNode;
-  containerRef?: React.RefObject<HTMLElement>;
+  containerRef?: React.RefObject<HTMLElement | SVGElement | null>;
   newOnTop?: boolean;
   rotationRange?: number;
   animationSequence?: TrailAnimationSequence; // Updated type
@@ -49,8 +49,9 @@ const ImageTrail = ({
   const trailRef = useRef<TrailItem[]>([]);
 
   const lastAddedTimeRef = useRef<number>(0);
-  const { position: mousePosition } =
-    useMouseVector(containerRef);
+  const { position: mousePosition } = useMouseVector(
+    containerRef as React.RefObject<HTMLElement | SVGElement> | undefined
+  );
   const lastMousePosRef = useRef(mousePosition);
   const currentIndexRef = useRef(0);
   // Convert children to array for random selection
@@ -128,15 +129,15 @@ const TrailItem = ({ item, onComplete }: TrailItemProps) => {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
-  const sequence = item.animationSequence.map((segment: TrailSegment) => [
-    scope.current,
-    ...segment,
-  ]);
+    const sequence = item.animationSequence.map((segment: TrailSegment) => [
+      scope.current,
+      ...segment,
+    ]);
 
-  animate(sequence as AnimationSequence).then(() => {
-    onComplete(item.id);
-  });
-}, [animate, item.animationSequence, item.id, onComplete, scope]);
+    animate(sequence as AnimationSequence).then(() => {
+      onComplete(item.id);
+    });
+  }, [animate, item.animationSequence, item.id, onComplete, scope]);
 
   return (
     <motion.div
