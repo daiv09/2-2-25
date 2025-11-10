@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export function useTimeSince(startDateString: string) {
   const [timeSince, setTimeSince] = useState({
@@ -8,7 +8,7 @@ export function useTimeSince(startDateString: string) {
     seconds: 0,
   });
 
-  const calculateTimeSince = () => {
+  const calculateTimeSince = useCallback(() => {
     const startDate = new Date(startDateString);
     const currentDate = new Date();
     const diff = currentDate.getTime() - startDate.getTime();
@@ -19,7 +19,7 @@ export function useTimeSince(startDateString: string) {
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     return { days, hours, minutes, seconds };
-  };
+  }, [startDateString]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -27,7 +27,7 @@ export function useTimeSince(startDateString: string) {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [startDateString]);
+  }, [calculateTimeSince]);
 
   return timeSince;
 }

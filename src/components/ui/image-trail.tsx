@@ -49,7 +49,7 @@ const ImageTrail = ({
   const trailRef = useRef<TrailItem[]>([]);
 
   const lastAddedTimeRef = useRef<number>(0);
-  const { position: mousePosition, vector: mouseVector } =
+  const { position: mousePosition } =
     useMouseVector(containerRef);
   const lastMousePosRef = useRef(mousePosition);
   const currentIndexRef = useRef(0);
@@ -89,7 +89,7 @@ const ImageTrail = ({
     }
   }, []);
 
-  useAnimationFrame((time, delta) => {
+  useAnimationFrame((time) => {
     // Skip if mouse hasn't moved
     if (
       lastMousePosRef.current.x === mousePosition.x &&
@@ -128,15 +128,15 @@ const TrailItem = ({ item, onComplete }: TrailItemProps) => {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
-    const sequence = item.animationSequence.map((segment: TrailSegment) => [
-      scope.current,
-      ...segment,
-    ]);
+  const sequence = item.animationSequence.map((segment: TrailSegment) => [
+    scope.current,
+    ...segment,
+  ]);
 
-    animate(sequence as AnimationSequence).then(() => {
-      onComplete(item.id);
-    });
-  }, []);
+  animate(sequence as AnimationSequence).then(() => {
+    onComplete(item.id);
+  });
+}, [animate, item.animationSequence, item.id, onComplete, scope]);
 
   return (
     <motion.div
