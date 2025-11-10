@@ -17,7 +17,7 @@ type TrailAnimationSequence = TrailSegment[];
 
 interface ImageTrailProps {
   children: React.ReactNode;
-  containerRef?: React.RefObject<HTMLElement | SVGElement | null>;
+  containerRef?: React.RefObject<HTMLElement | null | SVGElement >;
   newOnTop?: boolean;
   rotationRange?: number;
   animationSequence?: TrailAnimationSequence; // Updated type
@@ -129,15 +129,15 @@ const TrailItem = ({ item, onComplete }: TrailItemProps) => {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
-    const sequence = item.animationSequence.map((segment: TrailSegment) => [
-      scope.current,
-      ...segment,
-    ]);
+  const sequence = item.animationSequence.map((segment: TrailSegment) => [
+    scope.current,
+    ...segment,
+  ]);
 
-    animate(sequence as AnimationSequence).then(() => {
-      onComplete(item.id);
-    });
-  }, [animate, item.animationSequence, item.id, onComplete, scope]);
+  animate(sequence as AnimationSequence).then(() => {
+    onComplete(item.id);
+  });
+}, [animate, item.animationSequence, item.id, onComplete, scope]);
 
   return (
     <motion.div

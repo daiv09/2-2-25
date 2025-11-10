@@ -14,13 +14,17 @@ import HoverFooter from "@/components/Footer";
 export default function Home() {
   const timeSince = useTimeSince("2024-08-02");
   const handleConfetti = useConfetti();
-
   const [showMessage, setShowMessage] = useState(false);
 
   return (
-    <div className="bg-gradient-to-t from-pink-100 via-pink-50 to-white min-h-screen">
-      <Navbar />
-      <div className="flex justify-center">
+    <div className="relative bg-gradient-to-t from-pink-100 via-pink-50 to-white min-h-screen overflow-hidden">
+      {/* 🔹 Navbar always on top */}
+      <div className="relative z-50">
+        <Navbar />
+      </div>
+
+      {/* 🔹 Button layer */}
+      <div className="flex justify-center relative z-40">
         <motion.button
           onClick={() => {
             setShowMessage(true);
@@ -34,12 +38,13 @@ export default function Home() {
         </motion.button>
       </div>
 
+      {/* 🔹 Message card */}
       {showMessage && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mt-6 p-6 bg-white rounded-lg shadow-xl text-center text-pink-600 text-lg font-semibold"
+          className="relative z-40 mt-6 p-6 bg-white rounded-lg shadow-xl text-center text-pink-600 text-lg font-semibold max-w-4xl mx-auto"
         >
           <p>
             Happy <span className="font-bold text-red-500">7-Month</span> Miss.
@@ -52,22 +57,25 @@ export default function Home() {
         </motion.div>
       )}
 
-      <TracingBeam className="px-6">
-        <div className="container mx-auto mt-12 px-4">
+      {/* 🔹 Decorative beam + trail (lower z-index) */}
+      <TracingBeam className="relative z-10 px-6">
+        <div className="container mx-auto mt-12 px-4 relative z-30">
           <div className="text-center mt-12">
             <TimeDisplay {...timeSince} />
           </div>
         </div>
 
-        <h1 className="text-5xl text-pink-500 font-bold text-center mt-4">
+        <h1 className="text-5xl text-pink-500 font-bold text-center mt-4 relative z-30">
           <TypedText />
         </h1>
-        <p className="mt-4 text-xl text-gray-700 text-center max-w-3xl mx-auto">
+
+        <p className="mt-4 text-xl text-gray-700 text-center max-w-3xl mx-auto relative z-30">
           Here&apos;s our beautiful journey together, each moment a memory to
-          cherish. Let&apos;s celebrate our love, one beautiful memory at a time.
+          cherish. Let&apos;s celebrate our love, one beautiful memory at a
+          time.
         </p>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 relative z-30">
           <MomentCard
             title="First Date"
             description="Our very first date... where it all started!"
@@ -94,9 +102,17 @@ export default function Home() {
             href="/drives-on-scooter"
           />
         </div>
-        <ImageTrailDemo />
+
+        {/* 🔹 ImageTrail behind content but visible */}
+        <div className="absolute inset-0 z-20 pointer-events-none">
+          <ImageTrailDemo />
+        </div>
       </TracingBeam>
-      <HoverFooter/>
+
+      {/* 🔹 Footer highest above everything */}
+      <div className="relative z-50">
+        <HoverFooter />
+      </div>
     </div>
   );
 }
